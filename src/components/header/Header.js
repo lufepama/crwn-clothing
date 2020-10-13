@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ReactComponent as Logo } from '../assets/crown.svg'
 import "./header.style.scss"
 import { auth } from "../../firebase/firebase.utils"
+import { connect } from 'react-redux';
 
 function Header({ currentUser }) {
     return(
@@ -23,5 +24,10 @@ function Header({ currentUser }) {
         </div>
     )
 }
+//Here we are recivieving the current user value from userReducer
+const mapSateToProps = state =>({
+    currentUser: state.user.currentUser
+})
 
-export default Header;
+export default connect(mapSateToProps)(Header);
+//With this, we can delete the currentUser prop given to Header component in App.js

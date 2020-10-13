@@ -13,7 +13,6 @@ class SignIn extends React.Component{
             password: ""
         }
     }
-
     handleSubmit = async event =>{
         event.preventDefault();
 
@@ -28,14 +27,12 @@ class SignIn extends React.Component{
         }catch(error){
             console.log(error);
         }
-
     }
 
     handleChange = event =>{
         const { value, name } = event.target
         this.setState({ [name]:value })
     }
-
 
     render(){
         return(
@@ -50,10 +47,8 @@ class SignIn extends React.Component{
                     <div className="buttons">
                         <Button type="submit"> Sign in </Button>
                         <Button onClick={signInWithGoogle} isGoogleSignIn >Google</Button>
-                    </div>
-                    
+                    </div>                    
                 </form>
-
             </div>
         )
     }
